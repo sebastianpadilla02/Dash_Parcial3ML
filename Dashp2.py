@@ -1,4 +1,5 @@
 import dash
+import os
 from dash import dcc, html, Input, Output
 import dash_bootstrap_components as dbc
 import plotly.express as px
@@ -10,6 +11,9 @@ from plotly.subplots import make_subplots
 
 # Inicializar la aplicación con el tema Bootstrap
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+
+# Define el servidor Flask para gunicorn
+server = app.server
 
 # Colores para cada sujeto
 subject_colors = {
@@ -120,5 +124,9 @@ def update_graphs_and_analysis(selected_exercise, selected_unit, selected_variab
 
 # Ejecutar la aplicación
 if __name__ == "__main__":
-    app.run_server(host='0.0.0.0', port=8080, debug=False)
+    # Configura el servidor para usar el puerto que Render asigna
+    port = int(os.environ.get("PORT", 8050))
+    
+    # Asegúrate de que `server` sea la instancia del servidor Flask en tu aplicación Dash
+    app.run_server(host="0.0.0.0", port=port)
 
