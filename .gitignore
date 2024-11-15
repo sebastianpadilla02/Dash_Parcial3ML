@@ -1,0 +1,49 @@
+# Archivos y carpetas del sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini
+ntuser.dat*
+AppData/
+OneDrive/
+Contacts/
+Documents/
+Downloads/
+Favorites/
+Links/
+Music/
+Pictures/
+Saved Games/
+Searches/
+Videos/
+
+# Archivos y carpetas de entorno de desarrollo
+.env
+*.env
+.vscode/
+.idea/
+*.iml
+.conda/
+.ipython/
+.matplotlib/
+.keras/
+__pycache__/
+*.pyc
+miniconda3/
+env/
+docker-compose.yml
+
+# Archivos ocultos de configuración
+.gitconfig
+bash_history
+docker/
+dotnet/
+eclipse/
+
+# Archivos específicos de Python
+*.pyo
+*.pyd
+*.pkl
+*.db
+
+# Archivos y carpetas específicas de tu proyecto
+assets/
